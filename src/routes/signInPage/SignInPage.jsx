@@ -6,4 +6,4 @@ const ChatPage = () => {
     )
 }
 
-export default SignInPage
+export default SignInPage 
