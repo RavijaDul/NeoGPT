@@ -1,7 +1,7 @@
  
 import './signUpPage.css'
 
-const ChatPage = () => {
+const SignUpPage = () => {
     return(
         <div className='signUpPage'>SignUpPage</div>
     )

@@ -1,8 +1,8 @@
-import './dashBoardPage.css'
+import './dashboardPage.css'
 
-const ChatPage = () => {
+const DashBoardPage = () => {
     return(
-        <div className='dashBoardPage'>DashBoardPage</div>
+        <div className='dashboardPage'>DashBoardPage</div>
     )
 }
 

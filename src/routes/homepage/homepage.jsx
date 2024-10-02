@@ -1,9 +1,10 @@
 import './homePage.css'
 
-const ChatPage = () => {
+const HomePage = () => {
     return(
-        <div className='homePage'>HomePage</div>
+        <div className='homepage'>HomePage</div>
     )
 }
 
 export default HomePage
+
