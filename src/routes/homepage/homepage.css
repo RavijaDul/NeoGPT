@@ -55,10 +55,12 @@
             color:white;
             border-radius: 20px;
             font-size:14px;
+            font-size:larger;
             margin-top: 20px;
             
 
             &:hover{
+                
                 background-color: white;
                 color:#217bfe;
             }

@@ -1,0 +1,112 @@
+.chatList{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding does not overflow the container */
+
+
+    .create-chat-link {
+        font-size: 14px;  /* Adjust size of 'Create a new chat' */
+        padding: 4px 10px;
+        text-decoration: none;
+    }
+    
+    .explore-link {
+        font-size: 14px;  /* Adjust size of 'Explore NEOGPT' */
+        padding: 4px 10px;
+        
+    }
+    
+    .contact-link {
+        font-size: 14px;  /* Adjust size of 'Contact' */
+        padding: 4px 10px;
+       
+    }
+
+    hr{
+        border:none;
+        height: 2px;
+        background-color: #ddd;
+        opacity: 0.3;
+        border-radius: 5px;
+        margin: 20px 0px;
+    }
+    .title{
+        font-weight: 600;
+        font-size:14px;
+        margin-bottom: 10px;
+    }
+
+    .list{
+        display: flex;
+        flex-direction: column;
+        overflow-y:scroll;
+        font-size:14px;
+        max-height: 300px;
+
+    }
+
+    a{
+        padding: 10px;
+        border-radius: 5px;  
+
+        &:hover{
+            background-color: #293736;
+        }
+    }
+
+    .upgrade {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 200px;
+        padding: 0px;
+        
+        border-radius: 8px; /* Rounded corners */
+        font-size: 12px; /* Increase the font size for visibility */
+
+        .logo {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .texts {
+        display: flex;
+        flex-direction: column;
+        font-size:12px;
+        margin-top: auto;
+    }
+    
+    .texts span:first-child {
+        font-weight: 600;
+    }
+    
+    .texts span:last-child {
+        color: #888;
+        font-size: 12px; /* Slightly smaller text for the second span */
+    }
+
+
+    
+    /*....................... Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px; /* Width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Track background */
+        border-radius: 5px;   /* Rounded scrollbar track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #888; /* Scrollbar color */
+        border-radius: 5px;     /* Rounded scrollbar */
+        border: 2px solid transparent; /* Add space around thumb */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #555; /* Darker color when hovering */
+    }
+}
