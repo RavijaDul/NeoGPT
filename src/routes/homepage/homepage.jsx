@@ -69,7 +69,7 @@ const Homepage = () => {
             <div className="terms">
                 <img src="/logo.png" alt="" className="logo" />
                 <div className="links">
-                    <Link to= "/">Terms of Service|</Link>
+                    <Link to= "/">Terms of Service</Link>
                     <Link to= "/">Privacy of Policy</Link>
                 </div>
             </div>

@@ -28,7 +28,7 @@ const RootLayout = () => {
                     </SignedIn>
                     </div>
                 </header>
-                
+
                 <main>
                     <Outlet/>
                 </main>
@@ -38,5 +38,8 @@ const RootLayout = () => {
 }
 
 export default RootLayout
+
+
+
 
 
