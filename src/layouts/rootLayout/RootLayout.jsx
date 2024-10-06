@@ -23,13 +23,12 @@ const RootLayout = () => {
                         <span>NEOGPT</span>
                     </Link>
                     <div className="user">
-                    
                     <SignedIn>
                         <UserButton />
                     </SignedIn>
                     </div>
                 </header>
-
+                
                 <main>
                     <Outlet/>
                 </main>

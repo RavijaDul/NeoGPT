@@ -4,9 +4,10 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 
 const DashboardLayout = () => {
-
-  const{userID, isLoaded}= useAuth();
   const navigate = useNavigate();
+
+  /*
+  const{userID, isLoaded}= useAuth();
 
   useEffect( ()=> {
     if(isLoaded && !userID){
@@ -14,8 +15,17 @@ const DashboardLayout = () => {
   }
   },[isLoaded, userID, navigate]
 
-  );
+  );*/
+  
+  const { isSignedIn, isLoaded } = useAuth();
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      navigate('/sign-in');
+    }
+  }, [isLoaded, isSignedIn, navigate]);
+
   if(!isLoaded)return "Loading...";
+
 
   return (
     <div className='dashboardLayout'>
@@ -28,3 +38,8 @@ const DashboardLayout = () => {
 }; 
 
 export default DashboardLayout;
+
+
+
+
+
