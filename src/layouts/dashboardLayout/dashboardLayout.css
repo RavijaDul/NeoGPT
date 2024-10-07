@@ -1,0 +1,25 @@
+.dashboardLayout{
+    display: flex;
+    gap: 5px;
+    padding-top: 20px;
+    height: 100%;
+
+    .menu{
+        flex:1;
+        width: 250px;
+        max-width: 300px;
+        padding: 10px;
+        
+        box-shadow: 1px 0px 5px rgba(95, 24, 24, 0);
+
+    }
+
+    .content{
+        flex: 5;
+        background-color: #282829;
+
+        
+    }
+
+    
+}
