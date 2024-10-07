@@ -12,7 +12,7 @@ const ChatList = () => {
             <hr/>
             <span className="title">RECENT CHATS</span>
             <div className="list">
-                <Link to = "/">My chat title</Link>
+                <Link to = "/dashboard/chats/52563">My chat title</Link>
                 <Link to = "/">My chat title</Link>
                 <Link to = "/">My chat title</Link>
                 <Link to = "/">My chat title</Link>
