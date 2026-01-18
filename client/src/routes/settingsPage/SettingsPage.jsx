@@ -34,7 +34,7 @@ const SettingsPage = () => {
 
     const fetchSettings = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/settings');
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`);
             if (response.ok) {
                 const data = await response.json();
                 setSettings(data);
@@ -51,7 +51,7 @@ const SettingsPage = () => {
         setSaving(true);
         setMessage('');
         try {
-            const response = await fetch('http://localhost:3000/api/settings', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const SettingsPage = () => {
         setAddingModel(true);
         setMessage('');
         try {
-            const response = await fetch('http://localhost:3000/api/settings/models', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings/models`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ const SettingsPage = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/settings/models/${modelName}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings/models/${modelName}`, {
                 method: 'DELETE',
             });
             
@@ -158,7 +158,7 @@ const SettingsPage = () => {
         setSaving(true);
         setMessage('');
         try {
-            const response = await fetch(`http://localhost:3000/api/settings/models/${editingModel}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings/models/${editingModel}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

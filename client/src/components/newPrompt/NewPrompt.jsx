@@ -33,7 +33,7 @@ const NewPrompt = ({ chatId, onMessageSent, onMessageAdded }) => {
 
     const fetchAvailableModels = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/settings');
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`);
             if (response.ok) {
                 const data = await response.json();
                 setAvailableModels(data.models || []);
@@ -61,7 +61,7 @@ const NewPrompt = ({ chatId, onMessageSent, onMessageAdded }) => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`http://localhost:3000/api/chats/${chatId}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chats/${chatId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

@@ -20,7 +20,7 @@ const ChatPage = () => {
 
     const fetchChat = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/chats/${id}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chats/${id}`);
             if (response.ok) {
                 const data = await response.json();
                 setChat(data);
@@ -65,7 +65,7 @@ const ChatPage = () => {
                 ? `Selected text: "${selectedText}"\n\nUser question: ${userQuestion}\n\nProvide a concise answer.`
                 : `Explain this text concisely: "${selectedText}"`;
                 
-            const response = await fetch('http://localhost:3000/api/explain', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/explain`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const ChatPage = () => {
         setExplaining(true);
         try {
             const context = `Original explanation: ${explanation}\n\nFollow-up question: ${followUpQuestion}`;
-            const response = await fetch('http://localhost:3000/api/explain', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/explain`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

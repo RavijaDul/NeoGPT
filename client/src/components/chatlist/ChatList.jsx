@@ -17,7 +17,7 @@ const ChatList = () => {
 
     const fetchUserChats = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/userchats/${user.id}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/userchats/${user.id}`);
             if (response.ok) {
                 const data = await response.json();
                 setUserChats(data.chats || []);
@@ -33,7 +33,7 @@ const ChatList = () => {
         e.preventDefault(); // Prevent navigation
         if (window.confirm('Are you sure you want to delete this chat?')) {
             try {
-                const response = await fetch(`http://localhost:3000/api/userchats/${user.id}/${chatId}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/userchats/${user.id}/${chatId}`, {
                     method: 'DELETE'
                 });
                 if (response.ok) {
