@@ -55,13 +55,38 @@
                 font-weight: 300;
                 font-size: 14px;
                 padding: 20px;
-                border:1px solid #555 ;
+                border: 2px solid #555;
                 border-radius: 20px;
+                background-color: #2c2937;
+                color: #ffffff;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                
+                &:hover {
+                    border-color: #217bfe;
+                    background-color: #217bfe;
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 25px rgba(33, 123, 254, 0.3);
+                }
+                
+                &:active {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 15px rgba(33, 123, 254, 0.4);
+                }
                 
                 img{
-                    width: 28px;
-                    height:28px;
-                    object-fit:fill;
+                    width: 32px;
+                    height: 32px;
+                    object-fit: contain;
+                    filter: brightness(0) invert(1); /* Make icons white */
+                }
+                
+                span {
+                    font-weight: 500;
+                    color: #ffffff;
                 }
             }
         }

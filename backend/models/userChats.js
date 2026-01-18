@@ -7,29 +7,25 @@ const userChatsSchema = new mongoose.Schema({
     },
     chats:[
         {
-            _id:{
-                type:String,
-                enum:["user"|"model"],
-                required:true,
+            chatId:{
+                type: String,
+                required: true,
             },
             title:{
                 type: String,
-                enum:["user"|"model"],
-                required:true,
+                required: true,
             },
             createdAt:{
-                type:Date,
-                default:Date.now()
-                
+                type: Date,
+                default: Date.now()
             },
-            // here goe the comment part
         },
     ],
 },
 {timestamps:true}
 );
 
-export default mongoose.models.userChats || mongoose.models("userChats",userChatsScema);
+export default mongoose.models.UserChats || mongoose.model("UserChats", userChatsSchema);
 
 
 // parts:[

@@ -7,6 +7,11 @@
     align-items: center;
     position: relative;
     
+    &.with-panel {
+        .wrapper .chat {
+            width: 60%; /* Reduce width when panel is shown */
+        }
+    }
 
     .wrapper{
         flex: 1;
@@ -27,6 +32,7 @@
             
             .message{
                 padding: 20px;               
+                color: white;
                 
                 &.user{
                    
@@ -64,3 +70,192 @@
                 margin-bottom: 10px;
                 gap: 20px;*/
                
+
+.selection-toolbar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2c2937;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    .selected-text-preview {
+        color: #ccc;
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    
+    input {
+        padding: 8px 12px;
+        border: 1px solid #555;
+        border-radius: 4px;
+        background-color: #1a1a1a;
+        color: white;
+        font-size: 14px;
+        
+        &::placeholder {
+            color: #888;
+        }
+        
+        &:focus {
+            outline: none;
+            border-color: #67635e;
+        }
+    }
+    
+    button {
+        background-color: #67635e;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        align-self: flex-end;
+        
+        &:hover {
+            background-color: #7a766f;
+        }
+        
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.explanation-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    
+    .explanation-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #333;
+        
+        h3 {
+            margin: 0;
+            color: white;
+        }
+        
+        button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            
+            &:hover {
+                color: #ccc;
+            }
+        }
+    }
+    
+    .explanation-content {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        color: white;
+        
+        p, li {
+            margin: 10px 0;
+        }
+        
+        .original-explanation {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .follow-up-history {
+            margin-bottom: 20px;
+            
+            .follow-up-item {
+                margin-bottom: 15px;
+                padding: 10px;
+                background-color: #2a2a2a;
+                border-radius: 6px;
+                
+                .follow-up-question {
+                    margin-bottom: 8px;
+                    color: #4a9eff;
+                }
+                
+                .follow-up-answer {
+                    color: #e0e0e0;
+                    
+                    p, li {
+                        margin: 5px 0;
+                    }
+                }
+            }
+        }
+        
+        .follow-up-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            
+            input {
+                flex: 1;
+                padding: 10px 12px;
+                border: 1px solid #555;
+                border-radius: 4px;
+                background-color: #1a1a1a;
+                color: white;
+                font-size: 14px;
+                
+                &::placeholder {
+                    color: #888;
+                }
+                
+                &:focus {
+                    outline: none;
+                    border-color: #67635e;
+                }
+                
+                &:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
+            }
+            
+            button {
+                padding: 10px 16px;
+                background-color: #67635e;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+                
+                &:hover:not(:disabled) {
+                    background-color: #7a766f;
+                }
+                
+                &:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './routes/homepage/Homepage';
 import ChatPage from './routes/chatPage/ChatPage';
 import DashboardPage from './routes/dashboardPage/DashboardPage';
+import SettingsPage from './routes/settingsPage/SettingsPage';
 import DashboardLayout from './layouts/dashboardLayout/DashboardLayout';
 import { ClerkProvider } from '@clerk/clerk-react';
 import SignUpPage from './routes/signUpPage/SignUpPage';
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
     {element:<DashboardLayout/>,
       children:[
         {path:"/dashboard",element:<DashboardPage />},
-        {path:"/dashboard/chats/:id",element:<ChatPage />}
+        {path:"/dashboard/chats/:id",element:<ChatPage />},
+        {path:"/dashboard/settings",element:<SettingsPage />}
       ]
     }
    ]

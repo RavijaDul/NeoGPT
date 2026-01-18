@@ -1,22 +1,44 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import './dashboardPage.css'
+import { useUser } from '@clerk/clerk-react';
 
 const DashboardPage = () => {
+  const { user } = useUser();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
     const text= e.target.text.value;
     if(!text) return;
 
-    await fetch ("http://localhost:3000/api/chats",{
-      method:"POST",
-      headers:{
-          "Content-Type": "application/json",
-      },
-      body:JSON.stringify({text})
-  });
+    try {
+      const response = await fetch ("http://localhost:3000/api/chats",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify({text, userId: user?.id})
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        navigate(`/dashboard/chats/${data.chatId}`);
+      } else {
+        console.error("Failed to create chat");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+  const handleOptionClick = (prompt) => {
+    const input = document.querySelector('input[name="text"]');
+    if (input) {
+      input.value = prompt;
+      input.focus();
+    }
+  };
+
   return (  
     <div className="dashboardPage">
       <div className="texts">
@@ -25,15 +47,15 @@ const DashboardPage = () => {
           <h1>NEOGPT</h1>
         </div>
         <div className="options">
-          <div className="option">
+          <div className="option" onClick={() => handleOptionClick("Hello! Let's start a conversation.")}>
             <img src="/chat.png" alt="" />
             <span>Create a New Chat</span>
           </div>
-          <div className="option">
+          <div className="option" onClick={() => handleOptionClick("Please analyze this image:")}>
             <img src="/image.png" alt="" />
             <span>Analyze Image</span>
           </div>
-          <div className="option">
+          <div className="option" onClick={() => handleOptionClick("I need help with this code:")}>
             <img src="/code.png" alt="" />
             <span>Help me with the Code</span>
           </div>
